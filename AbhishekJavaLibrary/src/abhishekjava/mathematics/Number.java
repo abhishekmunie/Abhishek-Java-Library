@@ -76,7 +76,7 @@ public class Number {
 
 	 private static String toWords2(int num) {
 			if (num < 10) {
-				 toWords1(num);
+				 return toWords1(num);
 			} else if (num < 20) {
 				 switch (num) {
 						case 10:
