@@ -11,19 +11,27 @@ public class Element {
 	 /**
 	  *
 	  */
-	 String Symbol;
+	 public String Symbol;
 	 /**
 	  *
 	  */
-	 Atom Atom;
+	 public String Name;
 	 /**
 	  *
 	  */
-	 int Period;
+	 public Atom[] Isotopes;
+	 /**
+		*
+		*/
+	 public Atom mostAbundentIsotope;
 	 /**
 	  *
 	  */
-	 int Group;
+	 public int Period;
+	 /**
+	  *
+	  */
+	 public int Group;
 
 	 /**
 	  * @param args the command line arguments

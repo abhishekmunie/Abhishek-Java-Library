@@ -13,7 +13,9 @@ public class PeriodicTable {
 	 /**
 		*
 		*/
-	 Element[] elements = new Element[]{};
+	 public static final Element[][] elements = new Element[][]{
+
+	 };
 
 	 /**
 	  * @param args the command line arguments

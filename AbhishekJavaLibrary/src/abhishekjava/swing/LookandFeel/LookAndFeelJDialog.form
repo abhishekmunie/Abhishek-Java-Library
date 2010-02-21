@@ -22,7 +22,7 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="2" attributes="0">
-                  <Component id="LaFInfoLabel" alignment="2" pref="400" max="32767" attributes="0"/>
+                  <Component id="LaFInfoLabel" alignment="2" pref="430" max="32767" attributes="0"/>
                   <Component id="LaFComboBox" alignment="2" min="-2" pref="123" max="-2" attributes="0"/>
                   <Component id="SelectButton" alignment="2" min="-2" pref="78" max="-2" attributes="0"/>
               </Group>
@@ -45,8 +45,14 @@
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JComboBox" name="LaFComboBox">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LaFComboBoxActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="LaFInfoLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="SelectButton">
     </Component>

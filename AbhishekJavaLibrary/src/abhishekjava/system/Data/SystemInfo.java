@@ -4,6 +4,8 @@
  */
 package abhishekjava.system.Data;
 
+import java.util.Enumeration;
+
 /**
  * Determines the current system properties.
  * <p>
@@ -127,117 +129,124 @@ public class SystemInfo {
     /**
      * 
      */
-    protected static final java.util.Properties props = System.getProperties();
+    public static final java.util.Properties SystemProperties = System.getProperties();
+
+		public static void main(String[] args){
+			 for(Enumeration e = SystemProperties.elements() ; e.hasMoreElements();){
+					System.out.println(e.nextElement());
+			 }
+		}
+
     /**
      * Java Runtime Environment version
      */
-    public static final String JavaVersion = props.getProperty("java.version");
+    public static final String JavaVersion = SystemProperties.getProperty("java.version");
     /**
      * Java Runtime Environment vendor
      */
-    public static final String JavaVendor = props.getProperty("java.vendor");
+    public static final String JavaVendor = SystemProperties.getProperty("java.vendor");
     /**
      * Java vendor URL
      */
-    public static final String JavaVendorUrl = props.getProperty("java.vendor.url");
+    public static final String JavaVendorUrl = SystemProperties.getProperty("java.vendor.url");
     /**
      * Java installation directory
      */
-    public static final String JavaHome = props.getProperty("java.home");
+    public static final String JavaHome = SystemProperties.getProperty("java.home");
     /**
      * Java Virtual Machine specification version
      */
-    public static final String JavaVmSpecificationVersion = props.getProperty("java.vm.specification.version");
+    public static final String JavaVmSpecificationVersion = SystemProperties.getProperty("java.vm.specification.version");
     /**
      * Java Virtual Machine specification vendor
      */
-    public static final String JavaVmSpecificationVendor = props.getProperty("java.vm.specification.vendor");
+    public static final String JavaVmSpecificationVendor = SystemProperties.getProperty("java.vm.specification.vendor");
     /**
      * Java Virtual Machine specification name
      */
-    public static final String JavaVmSpecificationName = props.getProperty("java.vm.specification.name");
+    public static final String JavaVmSpecificationName = SystemProperties.getProperty("java.vm.specification.name");
     /**
      * Java Virtual Machine implementation version
      */
-    public static final String JavaVmVersion = props.getProperty("java.vm.version");
+    public static final String JavaVmVersion = SystemProperties.getProperty("java.vm.version");
     /**
      * Java Runtime Environment specification vendor
      */
-    public static final String JavaVmVendor = props.getProperty("java.vm.vendor");
+    public static final String JavaVmVendor = SystemProperties.getProperty("java.vm.vendor");
     /**
      * Java Virtual Machine implementation name
      */
-    public static final String JavaVmName = props.getProperty("java.vm.name");
+    public static final String JavaVmName = SystemProperties.getProperty("java.vm.name");
     /**
      * Java Runtime Environment specification version
      */
-    public static final String JavaSpecificationVersion = props.getProperty("java.specification.version");
+    public static final String JavaSpecificationVersion = SystemProperties.getProperty("java.specification.version");
     /**
      * Java Runtime Environment specification vendor
      */
-    public static final String JavaSpecificationVendor = props.getProperty("java.specification.vendor");
+    public static final String JavaSpecificationVendor = SystemProperties.getProperty("java.specification.vendor");
     /**
      * Java Runtime Environment specification name
      */
-    public static final String JavaSpecificationName = props.getProperty("java.specification.name");
+    public static final String JavaSpecificationName = SystemProperties.getProperty("java.specification.name");
     /**
      * Java class format version number
      */
-    public static final String JavaClassVersion = props.getProperty("java.class.version");
+    public static final String JavaClassVersion = SystemProperties.getProperty("java.class.version");
     /**
      * Java class path
      */
-    public static final String JavaClassPath = props.getProperty("java.class.path");
+    public static final String JavaClassPath = SystemProperties.getProperty("java.class.path");
     /**
      * List of paths to search when loading libraries
      */
-    public static final String JavaLibraryPath = props.getProperty("java.library.path");
+    public static final String JavaLibraryPath = SystemProperties.getProperty("java.library.path");
     /**
      * Default temp file path
      */
-    public static final String JavaIoTmpdir = props.getProperty("java.io.tmpdir");
+    public static final String JavaIoTmpdir = SystemProperties.getProperty("java.io.tmpdir");
     /**
      * Name of JIT compiler to use
      */
-    public static final String JavaCompiler = props.getProperty("java.compiler");
+    public static final String JavaCompiler = SystemProperties.getProperty("java.compiler");
     /**
      * Path of extension directory or directories
      */
-    public static final String JavaExtDirs = props.getProperty("java.ext.dirs");
+    public static final String JavaExtDirs = SystemProperties.getProperty("java.ext.dirs");
     /**
      * Operating system name
      */
-    public static final String OsName = props.getProperty("os.name");
+    public static final String OsName = SystemProperties.getProperty("os.name");
     /**
      * Operating system architecture
      */
-    public static final String OsArch = props.getProperty("os.arch");
+    public static final String OsArch = SystemProperties.getProperty("os.arch");
     /**
      * Operating system version
      */
-    public static final String OsVersion = props.getProperty("os.version");
+    public static final String OsVersion = SystemProperties.getProperty("os.version");
     /**
      * File separator (“/” on UNIX)
      */
-    public static final String FileSeparator = props.getProperty("file.separator");
+    public static final String FileSeparator = SystemProperties.getProperty("file.separator");
     /**
      * Path separator (“:” on UNIX)
      */
-    public static final String PathSeparator = props.getProperty("path.separator");
+    public static final String PathSeparator = SystemProperties.getProperty("path.separator");
     /**
      * Line separator (“\n” on UNIX)
      */
-    public static final String LineSeparator = props.getProperty("line.separator");
+    public static final String LineSeparator = SystemProperties.getProperty("line.separator");
     /**
      * User's account name
      */
-    public static final String UserName = props.getProperty("user.name");
+    public static final String UserName = SystemProperties.getProperty("user.name");
     /**
      * User's home directory
      */
-    public static final String UserHome = props.getProperty("user.home");
+    public static final String UserHome = SystemProperties.getProperty("user.home");
     /**
      * User's current working directory
      */
-    public static final String UserDir = props.getProperty("user.dir");
+    public static final String UserDir = SystemProperties.getProperty("user.dir");
 }

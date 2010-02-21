@@ -23,6 +23,23 @@ public
      * no. of potons in nucleus.
      */
     public int proton;
+		/**
+		 * 
+		 */
+		public ElectronicConfiguration electronicConfiguration;
+		/**
+		 * 
+		 */
+		public int[] ionisationPotential;
+		/**
+		 *
+		 */
+		public int[] electronAffinity;
+		/**
+		 * 
+		 */
+		public int electronegativity;
+
 
     public double getNuclearRadius() {
         return BigDecimal.valueOf(Constants.r_o).multiply(BigDecimal.valueOf(Math.pow(proton + neutron, 1 / 3))).doubleValue();
