@@ -42,7 +42,7 @@ public class StringFunction {
 
 	 public static String toggleCase(String s) {
 			String strToggled = "";
-			for(char ch : s.toCharArray()){
+			for (char ch : s.toCharArray()) {
 				 if ((ch >= 65) && (ch <= 90)) {
 						ch = Character.toLowerCase(ch);
 				 }
@@ -92,10 +92,42 @@ public class StringFunction {
 	 }
 
 	 /**
+	  * Rearranges words of String s, with all starting with String st.
+	  * @param st The String with which all the rearranged form of String s will start.
+	  * @param s The String to be rearranged.
+	  * @return
+	  */
+	 public static String[] rearrange(String st, String s) {
+			String[] sR = new String[]{};
+			for (int i = 0; i < s.length(); i++) {
+				 if (s.length() > 1) {
+						sR = Array.merge(sR, rearrange(st + s.charAt(i), new StringBuffer(s).deleteCharAt(i).toString()));
+				 } else {
+						sR = Array.merge(sR, new String[]{st + s});
+				 }
+			}
+			return sR;
+	 }
+
+	 /**
+	  * Rearranges words of String s.
+	  * @param s The String to be rearranged.
+	  * @return
+	  */
+	 public static String[] rearrange(String s) {
+			return rearrange("", s);
+	 }
+
+	 /**
 	  * Main Method
 	  * @param args the command line arguments
 	  */
 	 public static void main(String[] args) {
-			// TODO code application logic here
+			System.out.print("Enter a word: ");
+			System.out.println("Anagrams:\n");
+			String[] A = rearrange("WORD");
+			for (int i = 0; i < A.length; i++) {
+				 System.out.println(A[i]);
+			}
 	 }
 }
