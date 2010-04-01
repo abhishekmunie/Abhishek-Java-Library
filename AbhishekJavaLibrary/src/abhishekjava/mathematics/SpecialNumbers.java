@@ -293,6 +293,7 @@ public class SpecialNumbers {
 				 }
 			}
 	 }
+
 //	 public static void main(String[] args) throws IOException {
 //			System.out.println("************************");
 //			System.out.println("*****Special Number*****");

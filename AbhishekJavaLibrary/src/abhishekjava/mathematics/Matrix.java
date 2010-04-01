@@ -13,7 +13,6 @@ public class Matrix implements Comparable<Matrix> {
 	 int[][] elements;
 
 	 public Matrix(int[][] elements) {
-
 			this.elements = elements;
 	 }
 
@@ -329,6 +328,115 @@ public class Matrix implements Comparable<Matrix> {
 						}
 				 }
 				 System.out.println();
+			}
+	 }
+  static int[][] matrix;
+
+	 static void TopLeftClockwiseSpiral(){
+			int num = 1;
+			for (int i = 0; i < Math.ceil(matrix.length / 2.0f); i++) {
+				 for (int j = i; j <= matrix[i].length - 1 - i; j++) {
+						matrix[i][j] = num++;
+				 }
+				 for (int k = i + 1; k <= matrix.length - 1 - i; k++) {
+						matrix[k][matrix[i].length - 1 - i] = num++;
+				 }
+				 for (int l = matrix[matrix.length - 1 - i].length - i - 2; l >= i; l--) {
+						matrix[matrix.length - 1 - i][l] = num++;
+				 }
+				 for (int m = matrix.length - 2 - i; m > i; m--) {
+						matrix[m][i] = num++;
+				 }
+			}
+	 }
+
+	 static void TopLeftCounterclockwiseSpiral(){
+			int num = 1;
+			for (int i = 0; i < matrix.length; i++) {
+				 for (int m = i; m <= matrix.length - i - 1; m++) {
+						matrix[m][i] = num++;
+				 }
+				 for (int l = i + 1; l <= matrix[matrix.length - 1 - i].length - 1 - i; l++) {
+						matrix[matrix.length - 1 - i][l] = num++;
+				 }
+				 for (int k = matrix.length - 2 - i; k >= i; k--) {
+						matrix[k][matrix.length - 1 - i] = num++;
+				 }
+				 for (int j = matrix[i].length - 2 - i; j > i; j--) {
+						matrix[i][j] = num++;
+				 }
+			}
+	 }
+
+	 static void InToOut() {
+			int num = 1;
+			for (int i = (int) (Math.ceil(matrix.length / 2.0f) - 1); i >= 0; i--) {
+				 for (int j = i; j <= matrix[i].length - 1 - i; j++) {
+						matrix[i][j] = num++;
+				 }
+				 for (int k = i + 1; k <= matrix.length - 1 - i; k++) {
+						matrix[k][matrix[i].length - 1 - i] = num++;
+				 }
+				 for (int l = matrix[matrix.length - 1 - i].length - i - 2; l >= i; l--) {
+						matrix[matrix.length - 1 - i][l] = num++;
+				 }
+				 for (int m = matrix.length - 2 - i; m > i; m--) {
+						matrix[m][i] = num++;
+				 }
+			}
+	 }
+
+	 static void InToOutTop() {
+			int num = 1;
+			for (int i = (int) (Math.ceil(matrix.length / 2.0f) - 1); i >= 0; i--) {
+				 for (int j = i + 1; j <= matrix[i].length - 2 - i; j++) {
+						matrix[i][j] = num++;
+				 }
+				 for (int k = i; k <= matrix.length - 1 - i; k++) {
+						matrix[k][matrix[i].length - 1 - i] = num++;
+				 }
+				 for (int l = matrix[matrix.length - 1 - i].length - 2 - i; l >= i; l--) {
+						matrix[matrix.length - 1 - i][l] = num++;
+				 }
+				 for (int m = matrix.length - 2 - i; m >= i; m--) {
+						matrix[m][i] = num++;
+				 }
+			}
+	 }
+
+	 static void InToOutRight() {
+			int num = 1;
+			for (int i = (int) (Math.ceil(matrix.length / 2.0f) - 1); i >= 0; i--) {
+				 for (int k = i + 1; k <= matrix.length - 2 - i; k++) {
+						matrix[k][matrix[i].length - 1 - i] = num++;
+				 }
+				 for (int l = matrix[matrix.length - 1 - i].length - 1 - i; l >= i; l--) {
+						matrix[matrix.length - 1 - i][l] = num++;
+				 }
+				 for (int m = matrix.length - 2 - i; m >= i; m--) {
+						matrix[m][i] = num++;
+				 }
+				 for (int j = i + 1; j <= matrix[i].length - 1 - i; j++) {
+						matrix[i][j] = num++;
+				 }
+			}
+	 }
+
+	 static void InToOutBottom() {
+			int num = 1;
+			for (int i = (int) (Math.ceil(matrix.length / 2.0f) - 1); i >= 0; i--) {
+				 for (int l = matrix[matrix.length - 1 - i].length - 2 - i; l >= i; l--) {
+						matrix[matrix.length - 1 - i][l] = num++;
+				 }
+				 for (int m = matrix.length - 2 - i; m >= i; m--) {
+						matrix[m][i] = num++;
+				 }
+				 for (int j = i + 1; j <= matrix[i].length - 2 - i; j++) {
+						matrix[i][j] = num++;
+				 }
+				 for (int k = i; k <= matrix.length - 1 - i; k++) {
+						matrix[k][matrix[i].length - 1 - i] = num++;
+				 }
 			}
 	 }
 

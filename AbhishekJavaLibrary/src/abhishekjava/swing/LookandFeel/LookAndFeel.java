@@ -11,7 +11,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
- * @author Abhishek
+ * @author Abhishek Munie
  */
 public class LookAndFeel {
 
@@ -27,13 +27,14 @@ public class LookAndFeel {
 	 public String toString() {
 			return name;
 	 }
-	 static java.util.Vector<LookAndFeel> supportedLaFs = new java.util.Vector();
+	 static java.util.Vector<LookAndFeel> supportedLaFs = new java.util.Vector<LookAndFeel>();
 
 	 /**
-	  * Returns the available LookAndFeel.
-	  * @return
+	  * Gives a vector of available, supported LookAndFeel.
+	  * @return a vector of available, supported LookAndFeel.
 	  */
 	 public static java.util.Vector<LookAndFeel> getLookAndFeels() {
+			supportedLaFs = new java.util.Vector<LookAndFeel>();
 			@SuppressWarnings("unchecked")
 			javax.swing.UIManager.LookAndFeelInfo[] installedLafs = javax.swing.UIManager.getInstalledLookAndFeels();
 			for (javax.swing.UIManager.LookAndFeelInfo lafInfo : installedLafs) {

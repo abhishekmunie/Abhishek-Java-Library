@@ -6,6 +6,7 @@
 package abhishekjava.swing.LookandFeel;
 
 import java.awt.Component;
+import javax.swing.JFrame;
 
 /**
  *
@@ -14,18 +15,19 @@ import java.awt.Component;
 public class LookAndFeelJDialog extends javax.swing.JDialog {
 
 	 private static final long serialVersionUID = -1719565266573162863L;
-	 java.util.Vector<LookAndFeel> supportedLaFs = LookAndFeel.getLookAndFeels();
-	 boolean shouldPack;
+	 private java.util.Vector<LookAndFeel> supportedLaFs = LookAndFeel.getLookAndFeels();
+	 boolean changeOnSelect;
 	 Component[] c;
 
 	 /** Creates new form LookAndFeelJDialog
 	  * @param parent
 	  * @param modal
+	  * @param changeOnSelect
 	  * @param c - components to be upd
 	  */
-	 public LookAndFeelJDialog(java.awt.Frame parent, boolean modal, Component... c) {
+	 public LookAndFeelJDialog(java.awt.Frame parent, boolean modal, boolean changeOnSelect, Component... c) {
 			super(parent, modal);
-			this.shouldPack = true;
+			this.changeOnSelect = changeOnSelect;
 			this.c = c;
 			setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 			setMinimumSize(new java.awt.Dimension(343, 108));
@@ -41,7 +43,11 @@ public class LookAndFeelJDialog extends javax.swing.JDialog {
 				 }
 			});
 			LaFInfoLabel.setText("Select a Look and Feel, which will set the display type of application");
-			SelectButton.setText("Select");
+			if (changeOnSelect) {
+				 SelectButton.setVisible(false);
+			} else {
+				 SelectButton.setText("Select");
+			}
 	 }
 
 	 private void LaFComboBoxAction() {
@@ -51,6 +57,9 @@ public class LookAndFeelJDialog extends javax.swing.JDialog {
 			} catch (javax.swing.UnsupportedLookAndFeelException exc) {
 				 // This should not happen because we already checked
 				 ((javax.swing.DefaultComboBoxModel) LaFComboBox.getModel()).removeElement(supportedLaF);
+			}
+			if (changeOnSelect) {
+				 action();
 			}
 	 }
 
@@ -118,8 +127,18 @@ public class LookAndFeelJDialog extends javax.swing.JDialog {
 		}//GEN-LAST:event_LaFComboBoxActionPerformed
 
 	 public static void main(String[] args) {
-			LookAndFeelJDialog LAFD = new LookAndFeelJDialog(null, true);
+			abhishekjava.system.Data.SystemInfoJDialog dialog = new abhishekjava.system.Data.SystemInfoJDialog(new java.awt.Frame());
+			dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+
+				 @Override
+				 public void windowClosing(java.awt.event.WindowEvent e) {
+						System.exit(0);
+				 }
+			});
+			dialog.setVisible(true);
+			LookAndFeelJDialog LAFD = new LookAndFeelJDialog(null, true, true, dialog);
 			LAFD.setVisible(true);
+//			System.
 	 }
    // Variables declaration - do not modify//GEN-BEGIN:variables
    private javax.swing.JComboBox LaFComboBox;
