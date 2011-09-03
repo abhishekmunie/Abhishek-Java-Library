@@ -28,11 +28,10 @@ public class SpecialNumbers {
 				 sum += Math.pow(n % 10, 3);
 				 n /= 10;
 			}
-			if (num == sum) {
+			if (num == sum)
 				 return true;
-			} else {
+			else
 				 return false;
-			}
 	 }
 
 	 /**
@@ -69,11 +68,9 @@ public class SpecialNumbers {
 	  * @return boolean value i.e. the no. is composite or not
 	  */
 	 public static boolean isComposite(int n) {
-			for (int i = 2; i < n; i++) {
-				 if (n % i == 0) {
+			for (int i = 2; i < n; i++)
+				 if (n % i == 0)
 						return true;
-				 }
-			}
 			return false;
 	 }
 
@@ -97,11 +94,10 @@ public class SpecialNumbers {
 				 }
 				 n = sum;
 			}
-			if (sum == 1) {
+			if (sum == 1)
 				 return true;
-			} else {
+			else
 				 return false;
-			}
 	 }
 
 	 /**
@@ -114,16 +110,13 @@ public class SpecialNumbers {
 	  */
 	 public static boolean isPerfect(int num) {
 			int sum = 1;
-			for (int i = 2; i <= (num / 2); i++) {
-				 if ((num % i) == 0) {
+			for (int i = 2; i <= (num / 2); i++)
+				 if ((num % i) == 0)
 						sum += i;
-				 }
-			}
-			if (num == sum) {
+			if (num == sum)
 				 return true;
-			} else {
+			else
 				 return false;
-			}
 	 }
 
 	 /**
@@ -135,18 +128,15 @@ public class SpecialNumbers {
 	  * @return boolean value i.e. the no. is prime or not
 	  */
 	 public static boolean isPrime(int n) {
-			if (n <= 1) {
+			if (n <= 1)
 				 return false;
-			}
-			if (n == 2) {
+			if (n == 2)
 				 return true;
-			}
 			double limit = Math.ceil(Math.sqrt(n)) + 1;
 			int j = 2;
 			while (j < limit) {
-				 if (n % j == 0) {
+				 if (n % j == 0)
 						return false;
-				 }
 				 j++;
 			}
 			return true;
@@ -168,11 +158,10 @@ public class SpecialNumbers {
 				 Palindrome = Palindrome * 10 + d;
 				 n /= 10;
 			}
-			if (Palindrome == n) {
+			if (Palindrome == n)
 				 return true;
-			} else {
+			else
 				 return false;
-			}
 	 }
 
 	 /**
@@ -229,11 +218,10 @@ public class SpecialNumbers {
 						return false;
 				 }
 			}
-			if (sum == n) {
+			if (sum == n)
 				 return true;
-			} else {
+			else
 				 return false;
-			}
 	 }
 
 	 /**
@@ -252,9 +240,8 @@ public class SpecialNumbers {
 				 while (num >= 1) {
 						if (i == (num % 10)) {
 							 digCount++;
-							 if (digCount > 1) {
+							 if (digCount > 1)
 									return false;
-							 }
 						}
 						num /= 10;
 				 }
